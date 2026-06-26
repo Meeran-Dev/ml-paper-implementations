@@ -1,9 +1,11 @@
 import numpy as np
 
 class Perceptron:
-    def __init__(self, learning_rate=0.01, iterations=100):
+    def __init__(self, learning_rate=0.01, iterations=250):
         self.iterations = iterations
         self.learning_rate = learning_rate
+        self.weights = None
+        self.bias = None
     
     def weighted_sum(self, inputs):
         return np.dot(inputs, self.weights) + self.bias
