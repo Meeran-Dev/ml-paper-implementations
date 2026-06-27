@@ -1,2 +1,9 @@
 # ml-paper-implementations
-A collection of machine learning papers implemented from scratch.
+This repository is a collection of machine learning papers implemented from scratch.
+
+## Papers Implemented
+
+| Paper | Status |
+|---------|:---------:|
+| Perceptron | ✅ |
+| Logistic Regression | ⏳ |
