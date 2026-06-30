@@ -19,7 +19,7 @@ class Perceptron:
         self.bias = 0
         self.errors = []
 
-        for _ in range(self.iterations):
+        for i in range(self.iterations):
             error = 0
 
             for Xi, yi in zip(X, y):
@@ -29,7 +29,7 @@ class Perceptron:
                 self.bias += update
                 error += int(update != 0.0)
                 
-            print(f"Iteration {_+1}/{self.iterations}, Error: {error}")
+            print(f"Iteration {i+1}/{self.iterations}, Error: {error}")
             self.errors.append(error)
 
         return self

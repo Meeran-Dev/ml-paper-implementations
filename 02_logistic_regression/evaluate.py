@@ -1,11 +1,14 @@
-from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
 from utils import load_model, load_data
 import matplotlib.pyplot as plt
 
-model = load_model("saved_models/perceptron.pkl")
-_, X_test, _, y_test = load_data()
+model = load_model("saved_models/logistic_regression.pkl")
+scaler = load_model("saved_models/scaler.pkl")
 
-y_preds = model.predict(X_test)
+_, X_test, _, y_test = load_data()
+X_test = scaler.transform(X_test)
+
+y_preds = model.predict_class(X_test)
 
 accuracy = accuracy_score(y_test, y_preds)
 precision = precision_score(y_test, y_preds)
@@ -18,14 +21,14 @@ print(f"Precision: {precision:.3f}")
 print(f"Recall   : {recall:.3f}")
 print(f"F1 Score : {f1:.3f}")
 
-plt.figure("Training Error")
-plt.plot(range(1, len(model.errors) + 1), model.errors)
-plt.title('Perceptron Training Error Over Iterations')
+plt.figure("Training Loss")
+plt.plot(range(1, len(model.losses) + 1), model.losses)
+plt.title('Logistic Regression Training Loss Over Iterations')
 plt.xlabel('Iterations')
-plt.ylabel('Errors')
+plt.ylabel('Loss')
 plt.grid()
 plt.tight_layout()
-plt.savefig("results/error_curve.png", dpi=300)
+plt.savefig("results/loss_curve.png", dpi=300)
 
 plt.figure("Confusion Matrix")
 fig, ax = plt.subplots(num="Confusion Matrix", clear=True)
