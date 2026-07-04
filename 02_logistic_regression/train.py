@@ -8,7 +8,7 @@ print("Training set shape:", X_train.shape)
 print("Test set shape:", X_test.shape)
 
 logistic_regression = LogisticRegression(learning_rate=0.01, iterations=300)
-logistic_regression.fit(X_train, y_train)
+logistic_regression.fit(X_train, y_train, X_test, y_test)
 
 save_model(logistic_regression, "saved_models/logistic_regression.pkl")
 save_model(scaler, "saved_models/scaler.pkl")
