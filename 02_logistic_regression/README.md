@@ -38,3 +38,8 @@ python evaluate.py
 ### Confusion Matrix
 
 ![Confusion Matrix](results/confusion_matrix.png)
+
+## References
+
+- Cox, D. R. (1958). "The Regression Analysis of Binary Sequences." Journal of the Royal Statistical Society: Series B, 20(2), 215–232.
+- Hosmer, D.W., & Lemeshow, S. (1989). Applied Logistic Regression. Wiley.
