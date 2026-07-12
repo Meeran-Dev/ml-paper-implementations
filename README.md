@@ -5,6 +5,6 @@ This repository is a collection of machine learning papers implemented from scra
 
 | Paper | Status |
 |---------|:---------:|
+| Linear Regression | ✅ |
 | Perceptron | ✅ |
 | Logistic Regression | ✅ |
-| Linear Regression | ⏳ |
